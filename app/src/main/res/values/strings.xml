@@ -5,6 +5,10 @@
     <string name="hint_password">Contraseña</string>
     <string name="btn_login">Iniciar sesión</string>
 
+    <!-- Profile Activity Strings -->
+    <string name="title_profile">Usuario</string>
+    <string name="label_phone">Teléfono: 5534829770</string>
+
     <!-- Custom Messages -->
     <string name="error_required_field">Este campo es obligatorio</string>
     <string name="welcome_user">¡Bienvenid@ %1$s!</string>

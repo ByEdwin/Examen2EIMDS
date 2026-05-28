@@ -1,5 +1,6 @@
 package com.example.examen2eimds
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -13,13 +14,16 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val etUsername = findViewById<EditText>(R.id.etUsername)
-        val etPassword = findViewById<EditText>(R.id.etPassword)
         val btnLogin = findViewById<Button>(R.id.btnLogin)
 
         btnLogin.setOnClickListener {
             val user = etUsername.text.toString()
             if (user.isNotEmpty()) {
                 Toast.makeText(this, "Bienvenid@ $user", Toast.LENGTH_SHORT).show()
+                
+                // Navegar a ProfileActivity
+                val intent = Intent(this, ProfileActivity::class.java)
+                startActivity(intent)
             } else {
                 etUsername.error = "Ingresa tu nombre"
             }
