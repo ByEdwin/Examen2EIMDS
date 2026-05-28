@@ -11,12 +11,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         findViewById<Button>(R.id.btnLogin).setOnClickListener {
-            val user = findViewById<EditText>(R.id.etUsername).text
+            val user = findViewById<EditText>(R.id.etUsername).text.toString()
             val pass = findViewById<EditText>(R.id.etPassword).text.toString()
 
             if (pass == "abc123") {
-                Toast.makeText(this, "Bienvenid@ $user", Toast.LENGTH_SHORT).show()
-                startActivity(Intent(this, ProfileActivity::class.java))
+                val intent = Intent(this, ProfileActivity::class.java)
+                intent.putExtra("USER_NAME", user)
+                startActivity(intent)
             } else {
                 Toast.makeText(this, "Contraseña incorrecta", Toast.LENGTH_SHORT).show()
             }
