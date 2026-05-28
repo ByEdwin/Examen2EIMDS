@@ -2,30 +2,23 @@ package com.example.examen2eimds
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val etUsername = findViewById<EditText>(R.id.etUsername)
-        val btnLogin = findViewById<Button>(R.id.btnLogin)
+        findViewById<Button>(R.id.btnLogin).setOnClickListener {
+            val user = findViewById<EditText>(R.id.etUsername).text
+            val pass = findViewById<EditText>(R.id.etPassword).text.toString()
 
-        btnLogin.setOnClickListener {
-            val user = etUsername.text.toString()
-            if (user.isNotEmpty()) {
+            if (pass == "abc123") {
                 Toast.makeText(this, "Bienvenid@ $user", Toast.LENGTH_SHORT).show()
-                
-                // Navegar a ProfileActivity
-                val intent = Intent(this, ProfileActivity::class.java)
-                startActivity(intent)
+                startActivity(Intent(this, ProfileActivity::class.java))
             } else {
-                etUsername.error = "Ingresa tu nombre"
+                Toast.makeText(this, "Contraseña incorrecta", Toast.LENGTH_SHORT).show()
             }
         }
     }
