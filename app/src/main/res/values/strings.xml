@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Examen2EIMDS</string>
+    <string name="title_welcome">Bienvenid@</string>
+    <string name="hint_username">Nombre de usuario</string>
+    <string name="hint_password">Contraseña</string>
+    <string name="btn_login">Iniciar sesión</string>
+
+    <!-- Custom Messages -->
+    <string name="error_required_field">Este campo es obligatorio</string>
+    <string name="welcome_user">¡Bienvenid@ %1$s!</string>
 </resources>
